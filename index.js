@@ -2,7 +2,6 @@ import React, {
   useState, useRef, useMemo, useLayoutEffect
 } from 'react';
 import PropTypes from 'prop-types';
-import Translate from 'translate';
 import useOutSideClick from './use_out_side_click';
 import './index.scss';
 
@@ -141,9 +140,9 @@ const MultiselectDropdown = ({
                         className="deselect"
                         type="button"
                         >
-                        <Translate replacements={[selectedValues.length !== 0 ? `(${selectedValues.length})` : '']}>
-                          {'Deselect All {0}'}
-                        </Translate>
+                        <p>
+                          {`Deselect All ${selectedValues.length !== 0 ? `(${selectedValues.length})` : ''}`}
+                        </p>
                       </button>
                     )
                   }
@@ -155,7 +154,7 @@ const MultiselectDropdown = ({
                         className="select"
                         type="button"
                         >
-                        <Translate>Select All</Translate>
+                        <p>Select All</p>
                       </button>
                     )
                   }
