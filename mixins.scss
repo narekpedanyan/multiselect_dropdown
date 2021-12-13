@@ -1,0 +1,5 @@
+@import "skinning";
+
+@function rem($size) {
+  @return ($size/ $baseFontSize) + rem;
+}

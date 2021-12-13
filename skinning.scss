@@ -1,0 +1,33 @@
+$baseFontSize: 16;
+@import "mixins";
+$f: 'Roboto', Arial, sans-serif !default;
+
+// Old skinning colors, after mobile must be removed
+$hero: #09B66D !default;
+$primary: #0090F8 !default;
+$accent: #FEAA2C !default;
+
+$palette-1: white !default;
+$palette-2: #242D36 !default;
+
+
+$error-color: #FF0970 !default;
+$warning-color: #FF9900 !default;
+$success-color: #02BC8F !default;
+
+// New skinning
+$border-radius: rem(3) !default;
+$border-radius-l: rem(5) !default;
+
+// brightTheme
+$theme-color: #ffffff !default;
+$background-color: #EFF1FA !default;
+$border-color: #E1E2F1 !default;
+$primary-text-color: #000000 !default;
+$secondary-text-color: #606074 !default;
+$selected-state-color: #02BC8F !default;
+$action-color: #6094FA !default;
+$accent-color: #FF9900 !default;
+$insight-color: #ffffff !default;
+$stroke-color: #AEB1FF !default;
+$outcome-color: #373741;
