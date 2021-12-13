@@ -1,0 +1,192 @@
+@import "../../../assets/scss/skinning";
+
+.multiselect-dropdown {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  .field-label {
+    font-weight: 500;
+    font-size: rem(12);
+    line-height: rem(14);
+    margin-bottom: rem(4);
+    color: var(--sc-secondary-text-color);
+    padding-left: rem(6);
+  }
+  .visible-control {
+    width: 100%;
+    height: rem(32);
+    border: rem(1) solid var(--sc-border-color);
+    border-radius: rem(4);
+    background-color: var(--sc-theme-color);
+    display: flex;
+    align-items: center;
+    padding: 0 rem(10);
+    cursor: pointer;
+    position: relative;
+    &.disabled {
+      opacity: 0.5;
+    }
+    .selected {
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: rem(18);
+      color: var(--sc-primary-text-color);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      max-width: calc(100% - #{rem(10 + 18.36 + 4 + 22)});
+      width: 100%;
+      opacity: 0;
+    }
+    .truncated-labels {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: rem(18);
+      color: var(--sc-primary-text-color);
+      align-items: center;
+      padding: 0 rem(10);
+      pointer-events: none;
+    }
+    .invisible-selected-items {
+      background: var(--sc-border-color);
+      border-radius: rem(50);
+      height: rem(20);
+      min-width: rem(22);
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: rem(18);
+      color: var(--sc-primary-text-color);
+      padding: 0 rem(3);
+      margin-left: rem(4);
+      position: relative;
+      cursor: default;
+      .invisible-items {
+        position: absolute;
+        top: calc(100% + #{rem(2)});
+        left: -100%;
+        width: rem(153);
+        background: #FFFFFF;
+        box-shadow: 0 rem(4) rem(16) rgba(0, 0, 0, 0.12);
+        border-radius: rem(5);
+        display: flex;
+        flex-direction: column;
+        padding: rem(10) rem(12);
+        z-index: 66;
+        > span {
+          font-size: rem(14);
+          line-height: rem(20);
+          letter-spacing: rem(0.3);
+          color: #000000;
+          + span {
+            margin-top: rem(13);
+          }
+        }
+      }
+    }
+    .icon-arrow-down-thick1 {
+      color: var(--sc-secondary-text-color);
+      font-size: rem(6);
+      will-change: transform;
+      transform: rotate(0deg);
+      transition: .2s linear;
+      margin-left: auto;
+    }
+  }
+
+  .content-fall {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: calc(100% + #{rem(4)});
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: $theme-color;
+    box-shadow: 0 rem(4) rem(16) rgba(0, 0, 0, 0.12);
+    border-radius: rem(5);
+    z-index: 555;
+    .top-control {
+      width: 100%;
+      height: rem(32);
+      padding: rem(8) rem(16);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-bottom: rem(1) solid $border-color;
+      button[type="button"] {
+        font-size: rem(12);
+        line-height: rem(20);
+        letter-spacing: rem(0.3);
+        font-weight: normal;
+        cursor: pointer;
+        &[disabled] {
+          cursor: default;
+          opacity: 0.7;
+        }
+        &.select {
+          margin-left: rem(12);
+          font-weight: 900;
+          color: #0075FF;
+        }
+      }
+    }
+    .select-options {
+      width: 100%;
+      .each-field {
+        width: 100%;
+        display: flex;
+        cursor: pointer;
+        min-height: rem(32);
+        align-items: center;
+        padding: rem(4) rem(12);
+        justify-content: space-between;
+        position: relative;
+        .label {
+          font-weight: 700;
+          font-size: rem(14);
+          line-height: rem(20);
+          letter-spacing: rem(0.3);
+          color: $primary-text-color;
+          position: relative;
+          z-index: 44;
+        }
+        .checkbox {
+          min-width: rem(13.75);
+          font-size: rem(10);
+          margin-right: rem(1.5);
+          position: relative;
+          z-index: 44;
+        }
+        &:hover {
+          &:before {
+            content: '';
+            position: absolute;
+            z-index: 11;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.035);
+          }
+        }
+      }
+    }
+  }
+
+  &.opened {
+    .visible-control {
+      border-color: $stroke-color;
+      .icon-arrow-down-thick1 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
